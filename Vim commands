@@ -1,0 +1,46 @@
+vi myfile    -    create a new file
+j	-   Moves cursor down one line (same as down arrow)
+k	-   Moves cursor up line (same as up arrow)
+l	-   Moves cursor to the right one character (same as right arrow)
+h	-   Moves cursor to the left one character (same as left arrow)
+w	-   Moves cursor to beginning of next word
+e	-   Moves cursor to end of word
+b	-   Moves cursor to beginning of previous word
+$	-  Moves cursor to end of current line (same as End key)
+0 (zero)	-   Moves cursor beginning of current line (same as Home key)
+3G	 -   Jumps to third line (nG jumps to the nth line)
+1G	 - Jumps to first line
+Shift+G	-   Jumps to the last line
+dw  -  Delete the word 
+u  -  undo
+4u   -   Undo the last 4 operations 
+2dw   -   Delete two words
+xxxx   -    Delete four characters, one at a time
+14x  -   Delete 14 characters
+dd  -   Delete the current line
+p   -   Whatever was lasted deleted or yanked can be “pasted”
+j   -   Join two lines, the current and the next by typing a capital J (Shift+J)
+yw   -   Copy (or “yank”) the current word:
+P   -     Paste (or “put”) the copied word before the current cursor by typing Shift+p
+:%s/text //g  -   Search for and delete the word text (add a space after the word text):
+1G    -  	Go to beginning of file (Shift+G)
+i    - 	  Enter insert mode
+Hello and	-   Add text to document with a space after “and”
+ESC   -   Exit insert mode and return to command mode by pressing the Escape key:
+l	-   Lowercase ‘L’ moves forward one space
+~	-   Shift+` changes letter to lower case
+:w  -   Save the file
+o   -    Open a blank line below the current line 
+O   -    Open a blank line above the current line
+:x	Will save and close the file.
+:wq	-      Will write to file and quit.
+:wq!	-     Will write to a read-only file, if possible, and quit.
+ZZ	    -     Will save and close. Notice that no colon : is used in this case.
+:q!	  -         Exit without saving changes
+:e!	   -    Discard changes and reload file
+:w!    	-     Write to read-only, if possible.
+/text   -      search for the text
+n   -   Search for the next instance of the word
+?line      -     Search backward for the word line
+cw   -    You will replace the word line with the word entry
+A     -    Add text at the end of a line

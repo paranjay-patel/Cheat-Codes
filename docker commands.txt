@@ -1,0 +1,43 @@
+#docker run [image_name] [startup command]  - to fetch the docker image from docker hub to docker cache
+
+#docker ps  -   to see courrently running container in the system (option= --alll)
+
+#docker stop [container ID]  -   to stop perticuler container
+
+#docker rm [container ID]  -   to stop container and remove all the conatiner related data from system (-f = forecefully)
+
+#docker kill [container ID]  -   to forcefully stop perticuler container
+
+#docker run = docker create + docker start
+
+#docker log  [container ID]  -  to see what is happening inside container
+
+#docker exec -i -t [container id] [command]  -   to run command inside container
+
+#docker_file = contains all the information for running your software in a base container
+
+#docker_file -> docker_client -> docker_server -> docker_image -> docker_container
+
+#how to create custom Image
+  step 1 -> choose a base Image
+  step 2 -> run commands for your software
+  step 3 -> specify the base command to be run at startup
+
+#docker build .    -    to build an image from docker file
+
+#docker commit -c 'CMD "[startup command]" ' [container ID]    -     take a file system snapshot of whatever is going on , in that container and then start with 'startup command' next time
+ 
+#docker run -p [machine_port]:[container_port] [container_name]     -    connect the outer
+system port to docker container port  (-d to run deamon in background )
+
+#ufw allow [port_number]     -      to allow port number to establish a connection number in system
+
+#docker system prune    -     to remove all the stoped container and their data
+
+#docker cp [source] [destination]   -    copy file from container to machine ( source = [container_id]:[file_name] )
+
+#docker commit [container_id]   -   to commit changes to docker container and then it creates an docker image
+
+#docker images    -      to show all docker images
+
+#docker commit [container_id] [REPOSITORY:TAG]    -  to tag the container ( repository=harry/nginx    tag=6.7 )

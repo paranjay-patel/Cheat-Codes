@@ -1,0 +1,7 @@
+materialpalette.com - for choosing a colour for layout
+icon8.com - for icons
+vecteezy.com - for vector icon,images
+material.io
+draw.io - to make widget diagram
+dartpad.dartlang.org -  for practicing dart
+medium.com - Flutter Layout Cheat Sheet
