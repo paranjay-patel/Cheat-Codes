@@ -168,5 +168,5 @@ umask       -        used to determine default permissions that are set when a f
 -rwsr-xr-x 1 root root 31768 Jan 28 2010 /usr/bin/passwd        -       When the setuid permission is set on an executable binary file (a program) the binary file is run as the owner of the file, not as the user who executed it.
 chmod u+s file       -       To add the setuid permission symbolically
 chmod 4775 file        -     To add the setuid permission numerically   ( add 4000 to the file's existing permissions)
- 
+dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
   
