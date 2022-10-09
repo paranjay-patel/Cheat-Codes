@@ -169,4 +169,4 @@ umask       -        used to determine default permissions that are set when a f
 chmod u+s file       -       To add the setuid permission symbolically
 chmod 4775 file        -     To add the setuid permission numerically   ( add 4000 to the file's existing permissions)
 dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
-  
+sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
