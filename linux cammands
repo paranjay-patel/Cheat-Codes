@@ -170,3 +170,5 @@ chmod u+s file       -       To add the setuid permission symbolically
 chmod 4775 file        -     To add the setuid permission numerically   ( add 4000 to the file's existing permissions)
 dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
 sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
+echo $XDG_SESSION_TYPE    -    to know which display server is being used(Xorg, wayland, mir..) (edit /etc/gdm3/custom.conf to change display server)
+
