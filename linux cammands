@@ -171,4 +171,4 @@ chmod 4775 file        -     To add the setuid permission numerically   ( add 40
 dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
 sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
 echo $XDG_SESSION_TYPE    -    to know which display server is being used(Xorg, wayland, mir..) (edit /etc/gdm3/custom.conf to change display server)
-
+ldd [program_path]     -     to list out all the dependancy of that program
