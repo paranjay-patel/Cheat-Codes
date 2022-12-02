@@ -45,8 +45,8 @@
 
 #docker tag [local-image:tagname] [new-repo:tagname]  -   to change the local image name to push to remote repository(new-repo = username/imagename)
 
-#docker push [new-repo:tagname]    -   to push the image to dockerHub
-
+#docker push [new-repo:tagname]    -   to push the image to d
+ockerHub
 #docker-compose  -f  [filename.yaml]  up   -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)
 
 
