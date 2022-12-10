@@ -1,24 +1,26 @@
 tar -xvzf  file_name       -      to extract file
-sudo dpkg -i *.deb        -       to install debian package
- env | grep variable1      -    The pipe | character passes the output of the env command to the grep command, which searches the output.
-which  _Package_name      -     find the location of package
-whereis _command       -      find the location of command
+tar –cvzf [file_name.tar.gz] [~/Documents]       -     make a compress folder of all the files in Documents 
+tar -cvf [documents.tar]  [~/Documents]       -      This copies the contents of your Documents folder into a single file, called documents.tar
+sudo dpkg -i *.deb        -        to install debian package
+ env | grep variable1       -     The pipe | character passes the output of the env command to the grep command, which searches the output.
+which  _Package_name       -      find the location of package
+whereis _command        -       find the location of command
 whatis _filename or man -f _filename        -       search all man pages matches to filename in all 9 sections 
 man -k _keyword or apropos _keyword       -      searches both the names and descriptions of the man pages for a keyword.
-locate   _search_pattern       -      search given text in database , used to find any file, not just commands or man pages. 
-alias off='shutdown now'      -      use to give a command a shortname
-type _command       -       show the type   of command
-uname        -       show system name
-"  |  "      -    The pipe  ' | ' character can be used to send the output of one command to another.
-" | " ~ history | grep 1      -     pass the output of history to grep 
-cat  ->_filename      -       to create file ( creating and displaying text files  )
-cat   >>_filename     -      to append file
-gcc  _filename     -      to  compile c programe
-./a.out       -     run c program
+locate   _search_pattern       -       search given text in database , used to find any file, not just commands or man pages. 
+alias off='shutdown now'      -       use to give a command a shortname
+type _command        -       show the type   of command
+uname        -        show system name
+"  |  "      -      The pipe  ' | ' character can be used to send the output of one command to another.
+" | " ~ history | grep 1      -      pass the output of history to grep 
+cat  ->_filename        -        to create file ( creating and displaying text files  )
+cat   >>_filename       -       to append file
+gcc  _filename      -       to  compile c programe
+./a.out        -     run c program
 env - list enviroment variable
-function  _function_name(){}      -      to create functions
-export  _variable_name      -   to make variable an anviroment variable
-unset  _variable_name      -   delete variable
+function  _function_name(){}       -      to create functions
+export  _variable_name      -     to make variable an anviroment variable
+unset  _variable_name      -     delete variable
 tail  _filename         -        show  few line of file on bottom
 head  _filename       -       show few line of file from top
 touch   _filename        -       use to create file
