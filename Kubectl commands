@@ -1,12 +1,14 @@
-minikube start --vm-driver=[virtual_system_name]      -     to create the minikube cluster with hypervisor of our choice
-minikube status       -       states of minikube
-kubectl get nodes|pods|services|deployments|replicaset      -      to get the information about the components in minikube
-kubectl version       -       to get the version of kubernetes
-kubectl create deployment [name] --image=[image_name] [numbers_of_replicas]    -    create a deployment with image
-kubectl edit deployment [name]        -       edit a deployment 
-kubectl delete deployment [name]       -      delete a deployment 
-kubectl logs [pod_name]    -    to get log of a pod
-kubectl exec -it [pod_name] --  bin/bash        -      to get into a pod and open bash shall
-kubectl apply -f [config_file.yaml]     -    to run all the task in configuration file 
-kubectl delete -f [config_file.yaml]    -    to delete config file
-kubectl describe pod [pod_name]      -     get info about pod
+$minikube start --vm-driver=[virtual_system_name]      -     to create the minikube cluster with hypervisor of our choice
+$minikube status       -       states of minikube
+$kubectl get nodes|pods|services|deployments|replicaset      -      to get the information about the components in minikube 
+    options = '-o wide' to get more info
+             '-o yaml' to get output in yaml format
+$kubectl version       -       to get the version of kubernetes
+$kubectl create deployment [name] --image=[image_name] [numbers_of_replicas]    -    create a deployment with image
+$kubectl edit deployment [name]        -       edit a deployment 
+$kubectl delete deployment [name]       -      delete a deployment 
+$kubectl logs [pod_name]    -    to get log of a pod
+$kubectl exec -it [pod_name] --  bin/bash        -      to get into a pod and open bash shall
+$kubectl apply -f [config_file.yaml]     -    to run all the task in configuration file 
+$kubectl delete -f [config_file.yaml]    -    to delete config file
+$kubectl describe pods|services|deployments|replicaset [name]      -     get info about component
