@@ -1,73 +1,74 @@
 tar -xvzf  file_name       -      to extract file
-tar –cvzf [file_name.tar.gz] [~/Documents]       -     make a compress folder of all the files in Documents 
-tar -cvf [documents.tar]  [~/Documents]       -      This copies the contents of your Documents folder into a single file, called documents.tar
-sudo dpkg -i *.deb        -        to install debian package
- env | grep variable1       -     The pipe | character passes the output of the env command to the grep command, which searches the output.
-which  _Package_name       -      find the location of package
-whereis _command        -       find the location of command
-whatis _filename or man -f _filename        -       search all man pages matches to filename in all 9 sections 
-man -k _keyword or apropos _keyword       -      searches both the names and descriptions of the man pages for a keyword.
-locate   _search_pattern       -       search given text in database , used to find any file, not just commands or man pages. 
+tar –cvzf [file_name.tar.gz] [~/Documents]       -      make a compress folder of all the files in Documents 
+tar -cvf [documents.tar]  [~/Documents]       -       This copies the contents of your Documents folder into a single file, called documents.tar
+sudo dpkg -i [package.deb]         -        to install debian package
+ env | grep variable1       -      The pipe | character passes the output of the env command to the grep command, which searches the output.
+which [Package_name]       -      to locate the executable file associated with the given command by searching it in the path environment variable
+whereis [command]        -        used to find the location of source/binary file of a command
+whatis [filename] or man -f [filename]        -       search all man pages matches to filename in all 9 sections 
+man -k [keyword] or apropos [keyword]       -      searches both the names and descriptions of the man pages for a keyword.
+locate [search_pattern]       -       search given text in database , used to find any file, not just commands or man pages. 
 alias off='shutdown now'      -       use to give a command a shortname
-type _command        -       show the type   of command
+type [command]        -       show the type of command
 uname        -        show system name
 "  |  "      -      The pipe  ' | ' character can be used to send the output of one command to another.
-" | " ~ history | grep 1      -      pass the output of history to grep 
-cat  ->_filename        -        to create file ( creating and displaying text files  )
-cat   >>_filename       -       to append file
-gcc  _filename      -       to  compile c programe
+history | grep 1      -      pass the output of history to grep 
+cat > [filename]        -        to create file ( creating and displaying text files  )
+cat >> [filename]       -       to append file
+gcc [filename]      -       to  compile c programe
 ./a.out        -     run c program
-env - list enviroment variable
-function  _function_name(){}       -      to create functions
-export  _variable_name      -     to make variable an anviroment variable
-unset  _variable_name      -     delete variable
-tail  _filename         -        show  few line of file on bottom
-head  _filename       -       show few line of file from top
-touch   _filename        -       use to create file
-sudo -i           -       login as root
-passwd          -       change the login password
-ifconfig          -        configre networks
+env      -     list enviroment variable
+function [function_name]   or   [function_name]()     -      to create functions  (write code between '{' and '}')
+export  [variable_name]      -     to make variable an enviroment variable
+unset  [variable_name]      -     delete variable
+tail  [filename]         -        show  few line of file on bottom
+head  [filename]       -       show few line of file from top
+touch [filename]        -       use to create file
+sudo -i        -       login as root
+passwd         -       change the login password
+ifconfig         -        configre networks
 ps        -       only shows the current processes running in the current shell
-chmod   u=rwx,g=rwx,o=rwx   file_name     -    change permision of file
-chmod    777  file_name      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
+chmod   u=rwx,g=rwx,o=rwx   [file_name]     -    change permision of file
+chmod   777  [file_name]      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
                                                               ( read = 4 , write = 2 , execute = 1  -  all permision  means 4+2+1=7 )
-ls  ?    -     The ? character can be used to match exactly 1 character in a file name.
+ls  ?    -     The ? character can be used to match exactly 1 character in a file name (list all file which name include single char)
 ls –d /etc/[abcd]*     -     display all of the files in the /etc directory that begin with the letters a, b, c or d
 cp   -v   /home/pal/Documents/New   ./New1     -     show the conformation message that file copied
-sudo find / -type f -name "file_name or pattern"     -     find the given file ( replace 'f' with 'd' if you want to find directory ,                                         
-                                                                                                                replace -name with -iname if no case sensitive , replace '/' with from where to
-                                                                                                                start finding Ex. ~ , . 
-mkdir  directorie_name       -      create directorie
-rm -r  directorie_name       -      remove directorie
-rmdir  directorie_name       -      remove   empty  directorie
-gzip  [ file_name ]       -      to compress files (uses the Lempel-Ziv data compression algorithm)
-gunzip or gzip –d    [ file_name ]      -      to decompress files  with  .gz  extension 
-bzip2   [ file_name ]        -       to compress files  (Burrows-Wheeler block sorting algoruthm)
-bunzip2    [ file_name ]        -    to decompress files with  .bz  or  .bz2  extension
+sudo find / -type f -name [file_name or pattern]     -     find the given file ( replace 'f' with 'd' if you want to find directory ,                                         
+                                                                                 replace -name with -iname if no case sensitive , 
+                                                                                 replace '/' with from where to start finding Ex. ~ , . 
+mkdir  [directory_name]       -      create directory
+rm -r  [directory_name]       -      remove directory
+rmdir  [directory_name]       -      remove   empty  directory
+gzip  [file_name]       -      to compress files (uses the Lempel-Ziv data compression algorithm)
+gzip -r [folder_name]      -     compress every file in a folder and its subfolders
+gunzip or gzip –d  [file_name]      -      to decompress files  with  .gz  extension 
+bzip2   [file_name]        -       to compress files  (Burrows-Wheeler block sorting algoruthm)
+bunzip2  [file_name]        -    to decompress files with  .bz  or  .bz2  extension
 xz    [ file_name ]       -        to compress files (uses the Lempel-Ziv-Markov (LZMA) chain algorithm)
 unxz   [ file_name ]       -      to decompress files with  .xz  extension.
 tar  -c f   ARCHIVE   [OPTIONS]   [FILE...]         -       Create an archive file , The argument ARCHIVE will be the name of the resulting archive file   ,  -c - Create an archive.
 tar  -czf  alpha_files.tar.gz   alpha*         -        Tarballs can be compressed for easier transport, either by using gzip on the archive or by having tar do it with the -z option.
 tar  -cjf   alpha_files.tar.tar.bz2  alpha*         -        use -j option with tar to compress in   .tar.bz2  ,  .tbz  ,  .tbz2   or   use  'bzip2  [ tar file ]'
 tar  -t  ARCHIVE  [OPTIONS]        -         to see the content in archive file ( The argument ARCHIVE will be the name of the archive file )
-tar  -xjvf  folders.tbz         -        where   '-x	Extract files from an archive.' , '-j   Decompress with the bzip2 command. '  ,   '  -v   Verbosely list the files processed. ' , 
+tar  -xjvf  [folders.tbz]        -        where   '-x	Extract files from an archive.' , '-j   Decompress with the bzip2 command. '  ,   '  -v   Verbosely list the files processed. ' , 
                                                              It is important to keep the  –f  flag at the end, as tar assumes whatever follows this option is a file name. 
 zip [OPTIONS] [zipfile [file…]]         -      to make .zip file
-unzip  .zip_file         -       to unzip .zip file
-less or more  file_name        -       this pager command is use to view content of file with lot of  features (  better than cat )
-nl   file_name   -   adds line  numbers to the each  line of text_file  in output    
+unzip  [zip_file]         -       to unzip .zip file
+less or more  [file_name]        -       this pager command is use to view content of file with lot of  features (  better than cat )
+nl  [file_name]   -   adds line  numbers to the each  line of text_file  in output    
 "  < >  "   -    Redirection is achieved by using the arrow ' < > ' characters.
 echo "Line 1" > example.txt      -      This command displays no output because STDOUT was sent to the file example.txt instead of the screen
 echo "Another line" >> example.txt      -       to append the file
- ls  /fake  2>  error.txt       -       the  ' 2> '  indicates that all error messages should be sent to the file error.txt
+ls  /fake  2>  error.txt       -       the  '2>'  indicates that all error messages should be sent to the file error.txt
 ls  /fake  /etc/ppp  &>  all.txt       -       Both STDOUT and STDERR can be sent to a file by using the ampersand & character in front of the arrow > character.
-                                                                         The  &>  character set means both  1>  and   2> . 
-ls  /fake   /etc/ppp  >  example.txt  2>  error.txt       -       they can be redirected to different files by using both > and 2>. For example, to direct STDOUT to example.
-                                                                                                                       txt and STDERR to error
-ls  /fake   /etc/ppp  >  example.txt   2>&1          -        The 2>&1 part of the command means "send the stderr (channel 2) to the same place where stdout (channel 1) is going".
+                                               The  &>  character set means both  1>  and  2>. 
+ls  /fake   /etc/ppp  >  example.txt  2>  error.txt       -       they can be redirected to different files by using both > and 2>. 
+                                                                  For example, to direct STDOUT to example.txt and STDERR to error.txt
+ls  /fake   /etc/ppp  >  example.txt   2>&1     -    The 2>&1 part of the command means "send the stderr (channel 2) to the same place where stdout (channel 1) is going".
 tr   'a-z'   'A-Z'       -        takes a set of characters and translates them into another set of characters. ( only takes input by STDIN )
 tr   'a-z'   'A-Z'  <  example.txt       -      to tell the shell to get STDIN from a file instead of from the keyboard by using the  '<'  character:
-sort   file_name        -      The sort command can be used to rearrange the lines of files or input in either dictionary or numeric order.
+sort [file_name]     -    The sort command can be used to rearrange the lines of files or input in either dictionary or numeric order.
  sort   -t,  -k2  -k1n   -k3  os.csv        -     where  (  -t, )   Specifies the comma character as the field delimiter  ,  (-k2)	Sort by field #2  ,  ( -k1n )	Numerically sort by field #1 ,  (-k3)   Sort by field #3
 wc   file_name       -      The wc command provides the number of lines, words and bytes (1 byte = 1 character in a text file) for a file   (  accept more than one file  )   
  ls   directory_name   |   wc       -      if you wanted to know the total number of files in the directory
