@@ -97,20 +97,20 @@ sh  test.sh       -        the script is run as an argument to the shell  ( NOTE
 ./test.sh         -       the script is run directly from the shell. It is rare to have the current directory in the binary search path $PATH so the name is prefixed with ./ to indicate that
                           it should be run out of the current directory.
 #!/bin/bash        -        It is called a shebang or a "bang" line. It is nothing but the absolute path to the Bash interpreter.
- read NAME        -       The read command can accept a string right from the keyboard
+read NAME        -       The read command can accept a string right from the keyboard 
 echo "Hello $N"      -      A dollar $ sign followed by a number N corresponds to the Nth argument passed to the script. ( example :  './test.sh  World '  the output will be Hello World. 
                                                        The $0 variable contains the name of the script itself. and $1 is  'world' .
-test  [option] [argument]     -           The test command gives you easy access to comparison and file test operators. 
-[  $age  -lt 16  ]             -          The test statement is automatically called when you place its arguments within square brackets [ ] surrounded by spaces
-if  test –f /tmp/foo ; then    or   if  [ -f /tmp/foo] ; thend             -             test is fairly verbose for a command that gets used so frequently,  so there is an alias for it called   [   (left square bracket).
-seq             -             Often the seq command is used in conjunction with the for statement. The seq command can generate a list of integer values, for instance from 1 to 10
-arch           -             To see which family the CPU of the current system belongs to ( x86 or x86_64 )
-lscpu         -             For more information concerning the CPU
-free   -g  or  -m      -             To view the amount of RAM in your system, including the swap space
-bc         -        is used for command line calculator.  ( echo "1+2" | bc  output:3) 
-lscpi           -         To view all of the devices connected by the PCI bus
-lsusb          -        To display the devices connected to the system via USB
- fdisk   -l        -       the fdisk, cfdisk and sfdisk commands , which are tools for working with the MBR partitioned disks.
+test  [option] [argument]     -     The test command gives you easy access to comparison and file test operators. (used in shell scripting)
+[  $age  -lt 16  ]     -    The test statement is automatically called when you place its arguments within square brackets [ ] surrounded by spaces
+if  test –f /tmp/foo ; then    or   if  [ -f /tmp/foo] ; then     -    test is fairly verbose for a command that gets used so frequently,  so there is an alias for it called   [   (left square bracket).
+seq             -        Often the seq command is used in conjunction with the for statement. The seq command can generate a list of integer values, for instance from 1 to 10
+arch           -         To see which family the CPU of the current system belongs to ( x86 or x86_64 )
+lscpu         -           For more information concerning the CPU
+free   -g  or  -m      -     To view the amount of RAM in your system, including the swap space
+bc         -      is used for command line calculator.  ( ' echo "1+2" | bc ' output:3) 
+lspci      -      To view all of the devices connected by the PCI bus
+lsusb      -      To display the devices connected to the system via USB
+fdisk   -l     -    the fdisk, cfdisk and sfdisk commands , which are tools for working with the MBR partitioned disks.
                                                            The tools for managing GPT disks are gdisk, cgdisk, and sgdisk .
 lsmod           -          For hardware to function, the Linux kernel usually loads a driver or module.  lsmod command use to view the currently loaded modules
 apt - cache         -          used by the APT system to maintain its database and you can use apt-cache to find out information from the metadata associated with the packages in the system.
