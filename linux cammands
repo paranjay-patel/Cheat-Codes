@@ -177,21 +177,37 @@ dpkg -l [regex_expresion]     -    lists installed packages on the system accord
 sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
 echo $XDG_SESSION_TYPE    -    to know which display server is being used(Xorg, wayland, mir..) (edit /etc/gdm3/custom.conf to change display server)
 ldd [program_path]     -     to list out all the dependancy of that program
-ssh username@hostname      -      allows us to connect to an external machine on the network with the use of the ssh protocol
 service [script_name] [start/stop/status]    -    used for starting and stopping different services within the operating system  
 mount /dev/cdrom /mnt      -        /dev/cdrom is the device that needs to be mounted. Usually, a mountable device is found inside the /dev folder. 
                                     /mnt is the destination folder to mount the device to.
                                     When I say mount, it means that we’ll connect the device to a folder so we can access the files from our filesystem. The default syntax to mount a filesystem is below:
-wget [link to file]     -     to download a file from within the terminal
-iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT        -       to allow the port 80 for our webserver.
-ufw allow 80       -       to allow the port 80 for our webserver.
-                           (UFW and IPTables are firewall interfaces for the Linux Kernel’s netfilter firewall. IPTables directly passes firewall rules to netfilter while UFW configures the rules in IPTables which then sends those rules to netfilter.)
+
 dd if = /dev/sdb of = /dev/sda      -       to back up the entire hard drive as is to another drive.(if=input file , of=output file)
 useradd [username] -d /home/JD      -        create a new user named JournalDev with the home directory as /home/JD
 usermod JournalDev -a -G sudo, audio, mysql        -        to add more groups to the user(is used to modify existing users)
 
 
 
+------ NETWORKING -------
+
+$ssh username@hostname      -      allows us to connect to an external machine on the network with the use of the ssh protocol
+$netstat -lntu     -     to list all open ports( sockets=-l, port_number=-n, TCP_ports=-t, UDP_ports=-u )
+$wget [link to file]     -     to download a file from within the terminal
+$iptables -A INPUT -p tcp --dport 4000 -j ACCEPT       -       This sets the firewall to append (-A) the new rule to accept input packets via protocol (-p) TCP where the destination port (--dport) is 4000, and specifies the target jump (-j) rule as ACCEPT.
+$ufw allow [prot_number]       -       to allow the port_number for our webserver.
+                           (UFW and IPTables are firewall interfaces for the Linux Kernel’s netfilter firewall. IPTables directly passes firewall rules to netfilter while UFW configures the rules in IPTables which then sends those rules to netfilter.)
+$service iptables restart     -      restart iptable
+$nc -l -p 4000      -      start netcat (nc) and listen on port 4000,
+$telnet [hostname/IP address] [port number]     -     This tries to open a TCP connection on host on port_number.
+
+
+
+------ FORMATING & MOUNTING ------
+
+$lsblk  or  $sudo fdisk -l     -     gives you a list of block devices that are connected to linux workstation or server
+$mount     -      list all mounted storage devices on system
+$sudo umount [MOUNTPOINT]      -     to unmount the device from mountpoint 
+$sudo fdisk /dev/sdb       -        run that against the device that we want to create a file system on
 
 
 
