@@ -1,101 +1,101 @@
-tar -xvzf  file_name       -      to extract file
-tar –cvzf [file_name.tar.gz] [~/Documents]       -      make a compress folder of all the files in Documents 
-tar -cvf [documents.tar]  [~/Documents]       -       This copies the contents of your Documents folder into a single file, called documents.tar
-sudo dpkg -i [package.deb]         -        to install debian package
- env | grep variable1       -      The pipe | character passes the output of the env command to the grep command, which searches the output.
-which [Package_name]       -      to locate the executable file associated with the given command by searching it in the path environment variable
-whereis [command]        -        used to find the location of source/binary file of a command
-whatis [filename] or man -f [filename]        -       search all man pages matches to filename in all 9 sections 
-man -k [keyword] or apropos [keyword]       -      searches both the names and descriptions of the man pages for a keyword.
-locate [search_pattern]       -       search given text in database , used to find any file, not just commands or man pages. 
-alias off='shutdown now'      -       use to give a command a shortname
-type [command]        -       show the type of command
-uname        -        show system name
-"  |  "      -      The pipe  ' | ' character can be used to send the output of one command to another.
-history | grep 1      -      pass the output of history to grep 
-cat > [filename]        -        to create file ( creating and displaying text files  )
-cat >> [filename]       -       to append file
-gcc [filename]      -       to  compile c programe
-./a.out        -     run c program
-env      -     list enviroment variable
-function [function_name]   or   [function_name]()     -      to create functions  (write code between '{' and '}')
-export  [variable_name]      -     to make variable an enviroment variable
-unset  [variable_name]      -     delete variable
-tail  [filename]         -        show  few line of file on bottom
-head  [filename]       -       show few line of file from top
-touch [filename]        -       use to create file
-sudo -i        -       login as root
-passwd         -       change the login password
-ifconfig         -        configre networks
-ps        -       only shows the current processes running in the current shell
-ps aux    -      to list all the processes with PID
-chmod   u=rwx,g=rwx,o=rwx   [file_name]     -    change permision of file
-chmod   777  [file_name]      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
+$tar -xvzf  file_name       -      to extract file
+$tar –cvzf [file_name.tar.gz] [~/Documents]       -      make a compress folder of all the files in Documents 
+$tar -cvf [documents.tar]  [~/Documents]       -       This copies the contents of your Documents folder into a single file, called documents.tar
+$sudo dpkg -i [package.deb]         -        to install debian package
+$env | grep variable1       -      The pipe | character passes the output of the env command to the grep command, which searches the output.
+$which [Package_name]       -      to locate the executable file associated with the given command by searching it in the path environment variable
+$whereis [command]        -        used to find the location of source/binary file of a command
+$whatis [filename] or man -f [filename]        -       search all man pages matches to filename in all 9 sections 
+$man -k [keyword] or apropos [keyword]       -      searches both the names and descriptions of the man pages for a keyword.
+$locate [search_pattern]       -       search given text in database , used to find any file, not just commands or man pages. 
+$alias off='shutdown now'      -       use to give a command a shortname
+$type [command]        -       show the type of command
+$uname        -        show system name
+$"  |  "      -      The pipe  ' | ' character can be used to send the output of one command to another.
+$history | grep 1      -      pass the output of history to grep 
+$cat > [filename]        -        to create file ( creating and displaying text files  )
+$cat >> [filename]       -       to append file
+$gcc [filename]      -       to  compile c programe
+$./a.out        -     run c program
+$env      -     list enviroment variable
+$function [function_name]   or   [function_name]()     -      to create functions  (write code between '{' and '}')
+$export  [variable_name]      -     to make variable an enviroment variable
+$unset  [variable_name]      -     delete variable
+$tail  [filename]         -        show  few line of file on bottom
+$head  [filename]       -       show few line of file from top
+$touch [filename]        -       use to create file
+$sudo -i        -       login as root
+$passwd         -       change the login password
+4ifconfig         -        configre networks
+$ps        -       only shows the current processes running in the current shell
+$ps aux    -      to list all the processes with PID
+$chmod   u=rwx,g=rwx,o=rwx   [file_name]     -    change permision of file
+$chmod   777  [file_name]      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
                                                               ( read = 4 , write = 2 , execute = 1  -  all permision  means 4+2+1=7 )
-ls  ?    -     The ? character can be used to match exactly 1 character in a file name (list all file which name include single char)
-ls –d /etc/[abcd]*     -     display all of the files in the /etc directory that begin with the letters a, b, c or d
-cp   -v   /home/pal/Documents/New   ./New1     -     show the conformation message that file copied
+$ls  ?    -     The ? character can be used to match exactly 1 character in a file name (list all file which name include single char)
+$ls –d /etc/[abcd]*     -     display all of the files in the /etc directory that begin with the letters a, b, c or d
+$cp   -v   /home/pal/Documents/New   ./New1     -     show the conformation message that file copied
 sudo find / -type f -name [file_name or pattern]     -     find the given file ( replace 'f' with 'd' if you want to find directory ,                                         
                                                                                  replace -name with -iname if no case sensitive , 
                                                                                  replace '/' with from where to start finding Ex. ~ , . 
-mkdir  [directory_name]       -      create directory
-rm -r  [directory_name]       -      remove directory
-rmdir  [directory_name]       -      remove   empty  directory
-gzip  [file_name]       -      to compress files (uses the Lempel-Ziv data compression algorithm)
-gzip -r [folder_name]      -     compress every file in a folder and its subfolders
-gunzip or gzip –d  [file_name]      -      to decompress files  with  .gz  extension 
-bzip2   [file_name]        -       to compress files  (Burrows-Wheeler block sorting algoruthm)
-bunzip2  [file_name]        -    to decompress files with  .bz  or  .bz2  extension
-xz    [ file_name ]       -        to compress files (uses the Lempel-Ziv-Markov (LZMA) chain algorithm)
-unxz   [ file_name ]       -      to decompress files with  .xz  extension.
-tar  -c f   ARCHIVE   [OPTIONS]   [FILE...]         -       Create an archive file , The argument ARCHIVE will be the name of the resulting archive file   ,  -c - Create an archive.
-tar  -czf  alpha_files.tar.gz   alpha*         -        Tarballs can be compressed for easier transport, either by using gzip on the archive or by having tar do it with the -z option.
-tar  -cjf   alpha_files.tar.tar.bz2  alpha*         -        use -j option with tar to compress in   .tar.bz2  ,  .tbz  ,  .tbz2   or   use  'bzip2  [ tar file ]'
-tar  -t  ARCHIVE  [OPTIONS]        -         to see the content in archive file ( The argument ARCHIVE will be the name of the archive file )
-tar  -xjvf  [folders.tbz]        -        where   '-x	Extract files from an archive.' , '-j   Decompress with the bzip2 command. '  ,   '  -v   Verbosely list the files processed. ' , 
+$mkdir  [directory_name]       -      create directory
+$rm -r  [directory_name]       -      remove directory
+$rmdir  [directory_name]       -      remove   empty  directory
+$gzip  [file_name]       -      to compress files (uses the Lempel-Ziv data compression algorithm)
+$gzip -r [folder_name]      -     compress every file in a folder and its subfolders
+$gunzip or gzip –d  [file_name]      -      to decompress files  with  .gz  extension 
+$bzip2   [file_name]        -       to compress files  (Burrows-Wheeler block sorting algoruthm)
+$bunzip2  [file_name]        -    to decompress files with  .bz  or  .bz2  extension
+$xz    [ file_name ]       -        to compress files (uses the Lempel-Ziv-Markov (LZMA) chain algorithm)
+$unxz   [ file_name ]       -      to decompress files with  .xz  extension.
+$tar  -c f   ARCHIVE   [OPTIONS]   [FILE...]         -       Create an archive file , The argument ARCHIVE will be the name of the resulting archive file   ,  -c - Create an archive.
+$tar  -czf  alpha_files.tar.gz   alpha*         -        Tarballs can be compressed for easier transport, either by using gzip on the archive or by having tar do it with the -z option.
+$tar  -cjf   alpha_files.tar.tar.bz2  alpha*         -        use -j option with tar to compress in   .tar.bz2  ,  .tbz  ,  .tbz2   or   use  'bzip2  [ tar file ]'
+$tar  -t  ARCHIVE  [OPTIONS]        -         to see the content in archive file ( The argument ARCHIVE will be the name of the archive file )
+$tar  -xjvf  [folders.tbz]        -        where   '-x	Extract files from an archive.' , '-j   Decompress with the bzip2 command. '  ,   '  -v   Verbosely list the files processed. ' , 
                                                              It is important to keep the  –f  flag at the end, as tar assumes whatever follows this option is a file name. 
-zip [OPTIONS] [zipfile [file…]]         -      to make .zip file
-unzip  [zip_file]         -       to unzip .zip file
-less or more  [file_name]        -       this pager command is use to view content of file with lot of  features (  better than cat )
-nl  [file_name]   -   adds line  numbers to the each  line of text_file  in output    
-"  < >  "   -    Redirection is achieved by using the arrow ' < > ' characters.
-echo "Line 1" > example.txt      -      This command displays no output because STDOUT was sent to the file example.txt instead of the screen
-echo "Another line" >> example.txt      -       to append the file
-ls  /fake  2>  error.txt       -       the  '2>'  indicates that all error messages should be sent to the file error.txt
-ls  /fake  /etc/ppp  &>  all.txt       -       Both STDOUT and STDERR can be sent to a file by using the ampersand & character in front of the arrow > character.
+$zip [OPTIONS] [zipfile [file…]]         -      to make .zip file
+$unzip  [zip_file]         -       to unzip .zip file
+$less or more  [file_name]        -       this pager command is use to view content of file with lot of  features (  better than cat )
+$nl  [file_name]   -   adds line  numbers to the each  line of text_file  in output    
+$"  < >  "   -    Redirection is achieved by using the arrow ' < > ' characters.
+$echo "Line 1" > example.txt      -      This command displays no output because STDOUT was sent to the file example.txt instead of the screen
+$echo "Another line" >> example.txt      -       to append the file
+$ls  /fake  2>  error.txt       -       the  '2>'  indicates that all error messages should be sent to the file error.txt
+$ls  /fake  /etc/ppp  &>  all.txt       -       Both STDOUT and STDERR can be sent to a file by using the ampersand & character in front of the arrow > character.
                                                The  &>  character set means both  1>  and  2>. 
-ls  /fake   /etc/ppp  >  example.txt  2>  error.txt       -       they can be redirected to different files by using both > and 2>. 
+$ls  /fake   /etc/ppp  >  example.txt  2>  error.txt       -       they can be redirected to different files by using both > and 2>. 
                                                                   For example, to direct STDOUT to example.txt and STDERR to error.txt
-ls  /fake   /etc/ppp  >  example.txt   2>&1     -    The 2>&1 part of the command means "send the stderr (channel 2) to the same place where stdout (channel 1) is going".
-tr   'a-z'   'A-Z'       -        takes a set of characters and translates them into another set of characters. ( only takes input by STDIN )
-tr   'a-z'   'A-Z'  <  example.txt       -      to tell the shell to get STDIN from a file instead of from the keyboard by using the  '<'  character:
-sort [file_name]     -    The sort command can be used to rearrange the lines of files or input in either dictionary or numeric order.
- sort   -t,  -k2  -k1n   -k3  os.csv        -     where  (  -t, )   Specifies the comma character as the field delimiter  ,  (-k2)	Sort by field #2  ,  ( -k1n )	Numerically sort by field #1 ,  (-k3)   Sort by field #3
-wc   [file_name]       -      The wc command provides the number of lines, words and bytes (1 byte = 1 character in a text file) for a file   (  accept more than one file  )   
-ls   [directory_name]   |  wc       -      if you wanted to know the total number of files in the directory
-cut   -d:   -f1,5-7   [file_name]       -       The cut command can extract columns of text from a file or standard input. 
+$ls  /fake   /etc/ppp  >  example.txt   2>&1     -    The 2>&1 part of the command means "send the stderr (channel 2) to the same place where stdout (channel 1) is going".
+$tr   'a-z'   'A-Z'       -        takes a set of characters and translates them into another set of characters. ( only takes input by STDIN )
+$tr   'a-z'   'A-Z'  <  example.txt       -      to tell the shell to get STDIN from a file instead of from the keyboard by using the  '<'  character:
+$sort [file_name]     -    The sort command can be used to rearrange the lines of files or input in either dictionary or numeric order.
+$sort   -t,  -k2  -k1n   -k3  os.csv        -     where  (  -t, )   Specifies the comma character as the field delimiter  ,  (-k2)	Sort by field #2  ,  ( -k1n )	Numerically sort by field #1 ,  (-k3)   Sort by field #3
+$wc   [file_name]       -      The wc command provides the number of lines, words and bytes (1 byte = 1 character in a text file) for a file   (  accept more than one file  )   
+$ls   [directory_name]   |  wc       -      if you wanted to know the total number of files in the directory
+$cut   -d:   -f1,5-7   [file_name]       -       The cut command can extract columns of text from a file or standard input. 
                                                 -d option can specify alternative delimiters such as the colon or comma.
                                                 -f option can specify which fields to display
-cut    -c1-3,10-    file_name        -        able to extract columns of text based upon character position with the  -c  option (  output  the character between colomn 1 to 3 and 10 to onward  )
-grep  [option]  [ pattern ]   file_name        -        filter or find a pattern from file ( options   -c,-n,-v,-i,-w  )
-Regular  expressions           -            also referred to as regex, are a collection of normal and special characters that are used to find simple or complex patterns, respectively, in files.
+$cut    -c1-3,10-    file_name        -        able to extract columns of text based upon character position with the  -c  option (  output  the character between colomn 1 to 3 and 10 to onward  )
+$grep  [option]  [ pattern ]   file_name        -        filter or find a pattern from file ( options   -c,-n,-v,-i,-w  )
+$Regular  expressions           -            also referred to as regex, are a collection of normal and special characters that are used to find simple or complex patterns, respectively, in files.
 '  .  '         -          Any single character    (  The Period  ' . '  Character  )
 [ ]         -          	A list or range of characters to match one character, If the first character within the brackets is the caret ^, it means any character not in the list
 *	    -     The previous character repeated zero or more times
 ^     -     If the first character in the pattern, the pattern must be at the beginning of the line to match, otherwise just a literal ^ character
 $	    -     If the last character in the pattern, the pattern  must be at the end of the line to match, otherwise just a literal $ character
-grep   're\*'   newhome.txt      -     **Beware** ( re* )     -     (   ' \ '  prevent  to display 'r' and one or more occorance of 'e'  )
+$grep   're\*'   newhome.txt      -     **Beware** ( re* )     -     (   ' \ '  prevent  to display 'r' and one or more occorance of 'e'  )
 extended regular expressions      -     '  egrap  '  can  understand  extended regular expressions  (  egrap is alias to grap -E  )
 ?	   -      Matches previous character zero or one time, so it is an optional character    ( Ex.  'colou?r' -> colour , color)
 +	   -      Matches previous character repeated one or more times   (   Ex. e+   ->   red  ,  reef  ,  reeed  )
 |	   -      Alternation or like a logical "or" operator  (  Ex. 'gray|grey'   -   To match either gray or grey  )
-find    ~[from where to start search]   -name  "file_name"          -         The find command will begin the search in the directory specified and recursively search all of the subdirectories.
-grep -E   '[0-9]{3}'  file_name         -          Suppose you want to search for a pattern containing a sequence of three digits.  ( Ex. 763,498.842 )
-egrep   'no(b|n)'    file_name          -          The strings  ' nob '  and  ' non '   will match 
-echo   $?         -           After a program runs, be it a binary or a script, it returns an exit code which is an integer between 0 and 255. You can test this through the $? variable to see if the 
+$find    ~[from where to start search]   -name  "file_name"          -         The find command will begin the search in the directory specified and recursively search all of the subdirectories.
+$grep -E   '[0-9]{3}'  file_name         -          Suppose you want to search for a pattern containing a sequence of three digits.  ( Ex. 763,498.842 )
+$egrep   'no(b|n)'    file_name          -          The strings  ' nob '  and  ' non '   will match 
+$echo   $?         -           After a program runs, be it a binary or a script, it returns an exit code which is an integer between 0 and 255. You can test this through the $? variable to see if the 
                                         previous command completed successfully.
-sh  test.sh       -        the script is run as an argument to the shell  ( NOTE :  test is a name of script )
-./test.sh         -       the script is run directly from the shell. It is rare to have the current directory in the binary search path $PATH so the name is prefixed with ./ to indicate that
+$sh  test.sh       -        the script is run as an argument to the shell  ( NOTE :  test is a name of script )
+$./test.sh         -       the script is run directly from the shell. It is rare to have the current directory in the binary search path $PATH so the name is prefixed with ./ to indicate that
                           it should be run out of the current directory.
 #!/bin/bash        -        It is called a shebang or a "bang" line. It is nothing but the absolute path to the Bash interpreter.
 read NAME        -       The read command can accept a string right from the keyboard 
@@ -104,77 +104,77 @@ echo "Hello $N"      -      A dollar $ sign followed by a number N corresponds t
 test  [option] [argument]     -     The test command gives you easy access to comparison and file test operators. (used in shell scripting)
 [  $age  -lt 16  ]     -    The test statement is automatically called when you place its arguments within square brackets [ ] surrounded by spaces
 if  test –f /tmp/foo ; then    or   if  [ -f /tmp/foo] ; then     -    test is fairly verbose for a command that gets used so frequently,  so there is an alias for it called   [   (left square bracket).
-seq             -        Often the seq command is used in conjunction with the for statement. The seq command can generate a list of integer values, for instance from 1 to 10
-arch           -         To see which family the CPU of the current system belongs to ( x86 or x86_64 )
-ln [source path] [link name]     -     To create a hard link to another file
-ln -s [source path] [link name]     -     To create a soft link to another file
-lscpu         -           For more information concerning the CPU
-free   -g  or  -m      -     To view the amount of RAM in your system, including the swap space
-bc         -      is used for command line calculator.  ( ' echo "1+2" | bc ' output:3) 
-lspci      -      To view all of the devices connected by the PCI bus
-lsusb      -      To display the devices connected to the system via USB
-fdisk   -l     -    the fdisk, cfdisk and sfdisk commands , which are tools for working with the MBR partitioned disks.
-                                                           The tools for managing GPT disks are gdisk, cgdisk, and sgdisk .
-lsmod           -          For hardware to function, the Linux kernel usually loads a driver or module.  lsmod command use to view the currently loaded modules
-apt - cache         -          used by the APT system to maintain its database and you can use apt-cache to find out information from the metadata associated with the packages in the system.
-apt - cache   search   <keyword>           -              you can search and display the information about the available packages from the internet repositories
-apt - cache  pkgnames  <keyword>      -        to display all packages available on system that start with the <keyword> 
-apt-get  --purge  remove  [package_name]   or  sudo apt-get purge  [package_name]      -      uninstalls [package] and deletes all the configuration files
-                                                                                                                                                                                                  ( dont use '--purge' if dont want to delete configuration files )
-apt-get  autoremove             -            When you uninstall a program, there may be packages that the uninstalled program depended upon that are no longer used, To remove that packages 
-dpkg  --list             -             You can also use the “dpkg” command to see a list of all installed packages on your computer
-top         -          display Linux processes
- pstree             -              Processes can be “mapped” into a family tree of parent and child couplings. If you want to view this tree, the command pstree displays it
-uptime           -           provide an overall representation of how busy the system is currently and the trend over time.
-lshw          -            to gather vast information about your hardware components such as cpu, disks, memory, usb controllers etc.
- file  [file_name]         -        check the file content type  (output ='data', which usually means the file is binary )
- last or lastb  [file_name]            -           read the binary files, interpret their contents and then output text
-dmesg        -        command can be used to view the kernel ring buffer, which holds a large number of messages that are generated by the kernel.‌⁠​​⁠​  allows viewing of current kernel messages
-dpkg -L packagename         -       to get the list of the locations of the files that belong to that application.
-jobs      -       To see which commands are running in the current terminal
-fg   %1       -       bring the first command to the foreground (  To suspend (pause) the process and regain control of the terminal, type Ctrl-Z )
-bg  %1       -       To have this process continue executing in the background
-kill  %1         -      kills the first process
-kill [signal_option] [PID]       -       kill the process with specific process ID (SIGTERM=requests a program to stop running, SIGKILL=stop forcefully)
-pkill  ping          -         kill all ping process    ( using the name of the program rather than the PID ) ( ping in place of program name )
-dig          -         which performs queries on the DNS server to determine if the information needed is available on the server.
-getent database record  =  grep  record database  [  ex.   getend passwd pal  =  grep pal /etc/passwd  ] 
-id              -            outputs information about the current user, allowing you to confirm your identity on the system.
-who           -           displays a list of users who are currently logged into the system, 
-w             -           provides a more detailed list about the users currently on the system than the who command
-last         -            reads the entire login history from the /var/log/wtmp file and displays all logins and reboot records by default
-groupadd  [nameOfGroup]           -           to create a new group ( information about groups is in /etc/group)
-groupmod -n clerks sales             -         change groupname clerks to sales   ( change the GID for the group with the -g option )
-find / -nogroup       -          To search for all files that are owned by just a GID (not associated with a group name) . These files with no group name are called orphaned files .
-groupdel  [GroupName]         -          deleting the group  ,  As long as the group to be deleted is not a user's primary group
-grep -Ev '^#|^$' /etc/login.defs      -      The /etc/login.defs file also contains values that are applied by default to new users you create with the useradd command. This file contains many comments and blank
+$seq             -        Often the seq command is used in conjunction with the for statement. The seq command can generate a list of integer values, for instance from 1 to 10
+$arch           -         To see which family the CPU of the current system belongs to ( x86 or x86_64 )
+$ln [source path] [link name]     -     To create a hard link to another file
+$ln -s [source path] [link name]     -     To create a soft link to another file
+$lscpu         -           For more information concerning the CPU
+$free   -g  or  -m      -     To view the amount of RAM in your system, including the swap space
+$bc         -      is used for command line calculator.  ( ' echo "1+2" | bc ' output:3) 
+$lspci      -      To view all of the devices connected by the PCI bus
+$lsusb      -      To display the devices connected to the system via USB
+$fdisk   -l     -    the fdisk, cfdisk and sfdisk commands , which are tools for working with the MBR partitioned disks. The tools for managing GPT disks are gdisk, cgdisk, and sgdisk .
+$lsmod       -      For hardware to function, the Linux kernel usually loads a driver or module.  lsmod command use to view the currently loaded modules
+$apt - cache       -     used by the APT system to maintain its database and you can use apt-cache to find out information from the metadata associated with the packages in the system.
+$apt - cache   search   <keyword>       -       you can search and display the information about the available packages from the internet repositories
+$apt - cache  pkgnames  <keyword>      -      to display all packages available on system that start with the <keyword> 
+$sudo apt-get purge  [package_name]     -   uninstalls [package] and deletes all the configuration files ( dont use '--purge' if dont want to delete configuration files )
+$apt-get  autoremove     -     When you uninstall a program, there may be packages that the uninstalled program depended upon that are no longer used, To remove that packages 
+$dpkg  --list    -     You can also use the “dpkg” command to see a list of all installed packages on your computer
+$top    -   display Linux processes
+$pstree     -     Processes can be “mapped” into a family tree of parent and child couplings. If you want to view this tree, the command pstree displays it
+$uptime      -        provide an overall representation of how busy the system is currently and the trend over time.
+$lshw       -     to gather vast information about your hardware components such as cpu, disks, memory, usb controllers etc.
+$file  [file_name]      -     check the file content type  (output ='data', which usually means the file is binary )
+$last or lastb  [file_name]     -     read the binary files, interpret their contents and then output text
+$dmesg        -        command can be used to view the kernel ring buffer, which holds a large number of messages that are generated by the kernel.‌⁠​​⁠​  allows viewing of current kernel messages
+$dpkg -L packagename         -       to get the list of the locations of the files that belong to that application.
+$jobs      -       list all jobs on the system; active, stopped, or otherwise.(create job "$sleep 10")
+$fg  %N     -     bring the job to the foreground (  To suspend (pause) the process and regain control of the terminal, type Ctrl-Z )
+$bg  %N     -     To have this process continue executing in the background (%n - where n is the job number)
+$kill  %1         -      kills the first process
+$kill [signal_option] [PID]       -       kill the process with specific process ID (SIGTERM=requests a program to stop running, SIGKILL=stop forcefully)
+$pkill  ping          -         kill all ping process    ( using the name of the program rather than the PID ) ( ping in place of program name )
+$dig          -         which performs queries on the DNS server to determine if the information needed is available on the server.
+$getent database record  =  grep  record database  [  ex.   getent passwd pal  =  grep pal /etc/passwd  ] 
+$id              -            outputs information about the current user, allowing you to confirm your identity on the system.
+$who           -           displays a list of users who are currently logged into the system, 
+$w             -           provides a more detailed list about the users currently on the system than the who command
+$last         -            reads the entire login history from the /var/log/wtmp file and displays all logins and reboot records by default
+$groupadd  [nameOfGroup]           -           to create a new group ( information about groups is in /etc/group)
+$groupmod -n clerks sales             -         change groupname clerks to sales   ( change the GID for the group with the -g option )
+$find / -nogroup       -          To search for all files that are owned by just a GID (not associated with a group name) . These files with no group name are called orphaned files .
+$groupdel  [GroupName]         -          deleting the group  ,  As long as the group to be deleted is not a user's primary group
+$grep -Ev '^#|^$' /etc/login.defs      -      The /etc/login.defs file also contains values that are applied by default to new users you create with the useradd command. This file contains many comments and blank
                                                                      lines, so to only view lines that are not comments or blank lines (the real configuration settings), then you can use the following grep command:
-useradd -D         -         The -D option to the useradd command allows you to view or change some of the default values used by the useradd command
+$useradd -D         -         The -D option to the useradd command allows you to view or change some of the default values used by the useradd command
 (  /etc/default/useradd   file contains all the default value of new user when creating new user with useradd command  )
-useradd -u 1009 -g users -G sales,research -m -c 'Jane Doe' jane     -     creates a user with a UID of 1009, a primary group of users, supplementary memberships in the sales and research groups, a comment
-                                                                                                                            of "Jane Doe", and an account name of jane.
-passwd   [username]         -        to change user's password
-chage [options] [username]         -       provides many options for managing the password aging information found in the /etc/shadow file.
-usermod  [options] [argummments] [username]        -        command offers many options for modifying an existing user account.( ex. usermod -aG development jane )
- userdel  [username]     -   To delete the user jane without deleting the user's home directory /home/jane   ( use   ' -r '  to delete home directory ) 
-groups      -      If you are only interested in knowing what groups you belong to
-newgrp [group_name]      -       to change your current primary group.
-chgrp group_name file     -      used to change the group owner of any file to any group.the chgrp command can only be used to change the group owner of a file to a group that the user is already a member of
-stat [file-name]    -    displays more detailed information about a file, including providing the group ownership both by group name and GID number:
-chown jane : people  /tmp/filetest1     -     For example, if the root user wanted to change the user ownership of the abc.txt file to the user jane, and group owner to people .
-umask       -        used to determine default permissions that are set when a file or directory is created. Default permissions are determined when the umask value is subtracted from the maximum allowable default permissions
+$useradd -u 1009 -g users -G sales,research -m -c 'Jane Doe' jane     -     creates a user with a UID of 1009, a primary group of users, supplementary memberships in the sales and research groups, a comment of "Jane Doe", and an account name of jane.
+$passwd   [username]         -        to change user's password
+$chage [options] [username]         -       provides many options for managing the password aging information found in the /etc/shadow file.
+$usermod  [options] [argummments] [username]        -        command offers many options for modifying an existing user account.( ex. usermod -aG development jane )
+$userdel  [username]     -   To delete the user jane without deleting the user's home directory /home/jane   ( use   ' -r '  to delete home directory ) 
+$groups      -      If you are only interested in knowing what groups you belong to
+$newgrp [group_name]      -       to change your current primary group.
+$chgrp [group_name] [file_name]     -      used to change the group owner of any file to any group.the chgrp command can only be used to change the group owner of a file to a group that the user is already a member of
+$stat [file_name]    -    displays more detailed information about a file, including providing the group ownership both by group name and GID number:
+$chown jane : people  [file_name]     -     For example, if the root user wanted to change the user ownership of the abc.txt file to the user jane, and group owner to people .
+$umask     -    used to determine default permissions that are set when a file or directory is created. Default permissions are determined when the umask value is subtracted from the maximum allowable default permissions
 -rwsr-xr-x 1 root root 31768 Jan 28 2010 /usr/bin/passwd        -       When the setuid permission is set on an executable binary file (a program) the binary file is run as the owner of the file, not as the user who executed it.
-chmod u+s [file_name]       -       To add the setuid permission symbolically
-chmod 477 [file_name]        -     To add the setuid permission numerically   ( add 4000 to the file's existing permissions)
-dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
-sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
-echo $XDG_SESSION_TYPE    -    to know which display server is being used(Xorg, wayland, mir..) (edit /etc/gdm3/custom.conf to change display server)
-ldd [program_path]     -     to list out all the dependancy of that program
-service [script_name] [start/stop/status]    -    used for starting and stopping different services within the operating system  
-dd if=/dev/sdb of=/dev/sda      -       to back up the entire hard drive as is to another drive.(if=input file , of=output file)
-useradd [username] -d /home/JD      -        create a new user named JournalDev with the home directory as /home/JD
-usermod JournalDev -a -G sudo, audio, mysql        -        to add more groups to the user(is used to modify existing users)
-$cmp [file_name1] [file_name2]    -     to compare the two files byte by byte and helps you to find out whether the two files are identical or not
+$chmod u+s [file_name]       -       To add the setuid permission symbolically
+$chmod 477 [file_name]        -     To add the setuid permission numerically   ( add 4000 to the file's existing permissions)
+$dpkg -l [regex_expresion]     -    lists installed packages on the system according to regex
+$sudo gdebi [package.deb]    -     install a package and get dependencies from repositories
+$echo $XDG_SESSION_TYPE    -    to know which display server is being used(Xorg, wayland, mir..) (edit /etc/gdm3/custom.conf to change display server)
+$ldd [program_path]     -     to list out all the dependancy of that program
+$service [script_name] [start/stop/status]    -    used for starting and stopping different services within the operating system
+$sudo systemctl enable docker  -  To ensure that the Docker daemon starts after each system reboot
+$dd if=/dev/sdb of=/dev/sda      -       to back up the entire hard drive as is to another drive.(if=input file , of=output file)
+$useradd [username] -d /home/JD      -        create a new user with the home directory as /home/JD
+$usermod -a -G [group_name] [user_name]     -    to add groups to the user(is used to modify existing users)
+$id [username]    -    to see the userID and groupID for user
+$cmp [file_name1] [file_name2]    -    to compare the two files byte by byte and helps you to find out whether the two files are identical or not
+
 
 
 
@@ -224,8 +224,8 @@ $[telnet|nc] [hostname/IP address] [port number]     -     This tries to open a 
 $netcat -z -v [hostname|IPaddress] 1-1000    -    we can scan all ports up to 1000 on that host ,liseninging or not(-n=to specify that you do not need to resolve the IP address using DNS)
 $netcat [hostname/IP address] [port number] < [file_name]    -    use this file as an input for the netcat connection we will establish to the listening computer
 $tar -czf - * | netcat domain.com 4444     -     we can pack them into a tarball and then send them to the remote computer through netcat:
-$
  
+
 
 
 ************ FORMATING & MOUNTING ************
