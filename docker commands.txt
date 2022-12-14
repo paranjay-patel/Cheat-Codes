@@ -1,8 +1,12 @@
 #docker run [image_name] [startup command]  - to fetch the docker image from docker hub to docker cache
 
+#docker search [image_name]    -     search images in docker hub
+
+#docker attach [container_name]    -     to go inside s  container
+
 #docker ps  -   to see courrently running container in the system (option= --all or -a)
 
-#docker stop [container ID]  -   to stop perticuler container
+#docker [stop|start] [container ID]  -   to stop|start perticuler container
 
 #docker rm [container ID]  -   to stop container and remove all the conatiner related data from system (-f = forecefully)
 
@@ -11,6 +15,8 @@
 #docker run = docker create + docker start
 
 #docker logs [container ID]  -  to see what is happening inside container
+
+#docker diff [container_name]     -    to see the changes made in container
 
 #docker exec -i -t [container id] [command]  -   to run command inside container (ex.command=/bin/bash)
 
@@ -37,7 +43,7 @@
 
 #docker cp [source] [destination]   -    copy file from container to machine ( source = [container_id]:[file_name] )
 
-#docker commit [container_id]   -   to commit changes to docker container and then it creates an docker image
+#docker commit [container_id] [new_image_name]  -   to commit changes to docker container and then it creates an docker image from that container
 
 #docker images    -      to show all docker images
 
@@ -50,4 +56,8 @@ ockerHub
 #docker-compose  -f  [filename.yaml]  up   -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)
 
 
+
+********Dockerfile***********
+
+FROM   -   which image to use as a base image
 
