@@ -28,6 +28,7 @@ sudo -i        -       login as root
 passwd         -       change the login password
 ifconfig         -        configre networks
 ps        -       only shows the current processes running in the current shell
+ps aux    -      to list all the processes with PID
 chmod   u=rwx,g=rwx,o=rwx   [file_name]     -    change permision of file
 chmod   777  [file_name]      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
                                                               ( read = 4 , write = 2 , execute = 1  -  all permision  means 4+2+1=7 )
@@ -134,8 +135,8 @@ jobs      -       To see which commands are running in the current terminal
 fg   %1       -       bring the first command to the foreground (  To suspend (pause) the process and regain control of the terminal, type Ctrl-Z )
 bg  %1       -       To have this process continue executing in the background
 kill  %1         -      kills the first process
-kill [ PID ]       -       kill the process with specific process ID
- pkill  ping          -         kill all ping process    ( using the name of the program rather than the PID ) ( ping in place of program name )
+kill [signal_option] [PID]       -       kill the process with specific process ID (SIGTERM=requests a program to stop running, SIGKILL=stop forcefully)
+pkill  ping          -         kill all ping process    ( using the name of the program rather than the PID ) ( ping in place of program name )
 ssh localhost          -        used to generated data in the .log file
 service network restart           -          which takes down ALL interfaces, re-reads all related configuration files, and then restarts the networking for the system.
 host  google.com           -          provide the IP adress of google.com
@@ -212,9 +213,8 @@ $df -h       -       shows you how much space is used up on any of the mounted f
 $sudo mount /dev/sdb /mnt/disk2/      -     mount the /dev/sdb device to /mnt/disk2 floder 
 $mount /dev/cdrom /mnt      -        /dev/cdrom is the device that needs to be mounted. Usually, a mountable device is found inside the /dev folder. /mnt is the destination folder to mount the device to.
                                      When I say mount, it means that we’ll connect the device to a folder so we can access the files from our filesystem. The default syntax to mount a filesystem is below:
-
 $sudo ncdu  [path_from _where_to_start]     -     to check disk uasge(it is a tool that is usefull when you are running out of space) (-x=to exclude attached file system)
-                                                  
+$du /home/user/Documents         -        to check how much space a file or a directory takes up (option=-smkh)                                                     
 
 
                                     
