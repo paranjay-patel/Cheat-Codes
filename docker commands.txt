@@ -1,59 +1,113 @@
-#docker run [image_name] [startup command]  - to fetch the docker image from docker hub to docker cache
+#exec is used to start a process inside a container(new PID,PPID), while "attach" just connect the STDIN/STDOUT of the main process inside the container to corresponding STDIN/STDOUT of current terminal 
 
-#docker search [image_name]    -     search images in docker hub
+#if neither specified 'expose' and 'publish( -p )', container only be accessible from inside the container
+#if specified only 'expose', container is not accessible from outside of docker but accessible by other container on host
+#if specified both, then service in container can be accessibe from anywhere
 
-#docker attach [container_name]    -     to go inside s  container
+$docker run [image_name] [startup command]  - to fetch the docker image from docker hub to docker cache
 
-#docker ps  -   to see courrently running container in the system (option= --all or -a)
+$docker search [image_name]    -     search images in docker hub
 
-#docker [stop|start] [container ID]  -   to stop|start perticuler container
+$docker attach [container_name]    -     to go inside a container
 
-#docker rm [container ID]  -   to stop container and remove all the conatiner related data from system (-f = forecefully)
+$docker ps  -   to see courrently running container in the system (option= --all or -a)
 
-#docker kill [container ID]  -   to forcefully stop perticuler container
+$docker [stop|start] [container ID]  -   to stop|start perticuler container
 
-#docker run = docker create + docker start
+$docker rm [container ID]  -   to stop container and remove all the conatiner related data from system (-f = forecefully)
 
-#docker logs [container ID]  -  to see what is happening inside container
+$docker kill [container ID]  -   to forcefully stop perticuler container
 
-#docker diff [container_name]     -    to see the changes made in container
+$docker run = docker create + docker start
 
-#docker exec -i -t [container id] [command]  -   to run command inside container (ex.command=/bin/bash)
+$docker logs [container ID]  -  to see what is happening inside container
 
-#docker_file = contains all the information for running your software in a base container
+$docker diff [container_name]     -    to see the changes made in container
 
-#docker_file -> docker_client -> docker_server -> docker_image -> docker_container
+$docker exec -i -t [container id] [command]  -   to run command inside container (ex.command=/bin/bash)
 
-#how to create custom Image
+$docker_file = contains all the information for running your software in a base container
+
+$docker_file -> docker_client -> docker_server -> docker_image -> docker_container
+
+$how to create custom Image
   step 1 -> choose a base Image
   step 2 -> run commands for your software
   step 3 -> specify the base command to be run at startup
 
-#docker build -t [image_name]  .    -    to build an image from docker file (-t for giving the tag name)
+$docker build -t [image_name]  .    -    to build an image from docker file (-t for giving the tag name)
 
-#docker commit -c 'CMD "[startup command]" ' [container ID]    -     take a file system snapshot of whatever is going on , in that container and then start with 'startup command' next time
+$docker commit -c 'CMD "[startup command]" ' [container ID]    -     take a file system snapshot of whatever is going on , in that container and then start with 'startup command' next time
  
-#docker run -p [machine_port]:[container_port] [Image_name]     -    connect the outer system port to docker container port  (-d to run deamon in background )
+$docker run -p [machine_port]:[container_port] [Image_name]     -    connect the outer system port to docker container port  (-d to run deamon in background )
 
-#docker run  -it --name [container_name] [image_name] [/bin/bash] -   to give a container a name (default-random name generated)
+$docker run  -it --name [container_name] [image_name] [/bin/bash] -   to give a container a name (default-random name generated)
 
-#docker system prune    -     to remove all the stoped container and their data
+$docker system prune    -     to remove all the stoped container and their data
 
-#docker cp [source] [destination]   -    copy file from container to machine ( source = [container_id]:[file_name] )
+$docker cp [source] [destination]   -    copy file from container to machine ( source = [container_id]:[file_name] )
 
-#docker commit [container_id] [new_image_name]  -   to commit changes to docker container and then it creates an docker image from that container
+$docker commit [container_id] [new_image_name]  -   to commit changes to docker container and then it creates an docker image from that container
 
-#docker images    -      to show all docker images
+$docker images    -      to show all docker images
 
-#docker image rm [image]    -    to remove image
+$docker image rm [image]    -    to remove image
 
-#docker commit [container_id] [REPOSITORY:TAG]    -  to tag the container ( repository=harry/nginx    tag=6.7 )
+$docker commit [container_id] [new_image:TAG]    -  to tag the container ( repository=harry/nginx    tag=6.7 )
 
-#docker tag [local-image:tagname] [new-repo:tagname]  -   to change the local image name to push to remote repository(new-repo = username/imagename)
+$docker tag [local-image:tagname] [new-repo:tagname]  -   to change the local image name to push it to remote repository(new-repo = username/imagename)
 
-#docker push [new-repo:tagname]    -   to push the image to d
-ockerHub
-#docker-compose  -f  [filename.yaml]  up   -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)
+$docker push [new-repo:tagname]    -   to push the image to dockerHub
+
+$docker-compose  -f  [filename.yaml]  up   -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)
+
+$docker system df	   -    Show docker disk usage
+
+$docker system events	   -    Get real time events from the server
+
+$docker system info	   -     Display system-wide information
+
+$docker system prune	    -     Remove unused data
+
+$docker run -dp [host_port]:[container_port] [image]      -     connect host_port to container_port 
+
+$docker port [container_name]      -     to check, exposed ports of container
+
+$docker stop $(docker ps -a -q)     -      to stop all containers ( $()=process inside this run in loop until the it finish work on all container)
+
+$docker rm $(docker ps -a -q)     -     to remove all stopped container
+
+$docker rmi -f $(docker images -q)     -     delete all images forcefully
+
+$docker login     -      to connect to docker to dockerHUB
+
+
+
+
+
+********** VOLUMES ************
+
+---container to container----
+
+$docker run -it --name [container2] --privileged=true --volumes-from [container1] [] /bin/bash     -    Attached the volume of container1 to container2  and giving all privileges.(volume sharing)
+
+$docker run -it --name [container3] -v /volume2 [image] /bin/bash     -     create volume named volume2 for container3(volumes can also be created from docker file)
+
+---container to host---
+
+$docker run -it  --name [container_name]  -v [path of host machine]:[path of container]  privileged=true  ubuntu  /bin/bash      -     to map the volume between host and container
+
+$docker volume ls       -        to list thee volumes
+
+$docker volume create [volumn_name]       -       create volume
+
+$docker volume rm [volumn_name]       -       remove volume
+
+$docker volume prune [volumn_name]       -       to remove all unused volumes
+
+$docker volume/container  inspect [name]       -       to get the information about them    
+
+
 
 
 
@@ -69,5 +123,6 @@ WORKDIR    -    to set a working directory for conatiner
 CMD    -    execute the command during the cntainer creation 
 ENTRYPONT  -   similer to CMD but has highr prioroty over CMD, first commmand will be executed by ENTRYPOINT only
 ENV    -    enviroment variable
+VOLUME   -    to create volume (Ex. VOLUME ["/myvolume"]   -   creates a myvolume directory in '/') 
 
 
