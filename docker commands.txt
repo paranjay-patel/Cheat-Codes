@@ -29,15 +29,13 @@
   step 2 -> run commands for your software
   step 3 -> specify the base command to be run at startup
 
-#docker build .    -    to build an image from docker file
+#docker build -t [image_name]  .    -    to build an image from docker file (-t for giving the tag name)
 
 #docker commit -c 'CMD "[startup command]" ' [container ID]    -     take a file system snapshot of whatever is going on , in that container and then start with 'startup command' next time
  
 #docker run -p [machine_port]:[container_port] [Image_name]     -    connect the outer system port to docker container port  (-d to run deamon in background )
 
-#docker run --name [container_name] [image_name]   -   to give a container a name (default-random name generated)
-
-#ufw allow [port_number]     -      to allow port number to establish a connection number in system
+#docker run  -it --name [container_name] [image_name] [/bin/bash] -   to give a container a name (default-random name generated)
 
 #docker system prune    -     to remove all the stoped container and their data
 
@@ -46,6 +44,8 @@
 #docker commit [container_id] [new_image_name]  -   to commit changes to docker container and then it creates an docker image from that container
 
 #docker images    -      to show all docker images
+
+#docker image rm [image]    -    to remove image
 
 #docker commit [container_id] [REPOSITORY:TAG]    -  to tag the container ( repository=harry/nginx    tag=6.7 )
 
@@ -60,4 +60,14 @@ ockerHub
 ********Dockerfile***********
 
 FROM   -   which image to use as a base image
+RUN    -   to execute a command, it will create a layer in image
+MAINTAINER   -   auther/ownwer discription
+COPY    -    copy path from local system to containers
+ADD    -    similer to COPY, but it provides a feature to download a file form internet and also extarct the file 
+EXPOSE   -    to expose the port , sudch as port 8080 for tomcat 
+WORKDIR    -    to set a working directory for conatiner
+CMD    -    execute the command during the cntainer creation 
+ENTRYPONT  -   similer to CMD but has highr prioroty over CMD, first commmand will be executed by ENTRYPOINT only
+ENV    -    enviroment variable
+
 
