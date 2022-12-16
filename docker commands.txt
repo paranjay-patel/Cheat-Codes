@@ -84,6 +84,19 @@ $docker login     -      to connect to docker to dockerHUB
 
 
 
+********** NETWORK ************
+
+$docker network create [network_name]      -      to create docker network  
+ 
+$docker run -d \                                    -     to attach a network to container
+     --network todo-app --network-alias mysql \
+     -v todo-mysql-data:/var/lib/mysql \
+     -e MYSQL_ROOT_PASSWORD=secret \
+     -e MYSQL_DATABASE=todos \
+     mysql:8.0
+
+
+
 
 ********** VOLUMES ************
 
