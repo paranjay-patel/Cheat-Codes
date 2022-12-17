@@ -183,7 +183,7 @@ $cmp [file_name1] [file_name2]    -    to compare the two files byte by byte and
 #The Rsync program, which runs on port 873, can be used to transfer files from one computer to anothe
 #Mail servers, such as Sendmail and Postfix, typically use port 25 for SMTP traffic. If your server shouldn’t be sending outgoing mail, you may want to block that kind of traffic
 
-$ssh username@hostname      -      allows us to connect to an external machine on the network with the use of the ssh protocol
+$ssh username@remotehostIP      -      allows us to connect to an external machine on the network with the use of the ssh protocol
 $netstat -lntu     -     to list all open ports( sockets=-l, port_number=-n, TCP_ports=-t, UDP_ports=-u )
 $wget [link to file]     -     to download a file from within the terminal
 $iptables -A INPUT -p tcp --dport 4000 -j ACCEPT       -       This sets the firewall to append (-A) the new rule to accept input packets via protocol (-p) TCP where the destination port (--dport) is 4000, and specifies the target jump (-j) rule as ACCEPT.
