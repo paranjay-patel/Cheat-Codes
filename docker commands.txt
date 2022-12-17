@@ -1,9 +1,14 @@
 #exec is used to start a process inside a container(new PID,PPID), while "attach" just connect the STDIN/STDOUT of the main process inside the container to corresponding STDIN/STDOUT of current terminal 
 
+
 #if neither specified 'expose' and 'publish( -p )', container only be accessible from inside the container
 #if specified only 'expose', container is not accessible from outside of docker but accessible by other container on host
 #if specified both, then service in container can be accessibe from anywhere
 #the container is assigned an IP address for every Docker network it connects to. The IP address is assigned from the pool assigned to the network, so the Docker daemon effectively acts as a DHCP server for each container. Each network also has a default subnet mask and gateway.
+# ENTRYPOINT ["/start.sh"]          ========>     ENTRYPOINT["/start.sh", "aptly", "api", "serve"]
+  CMD ["aptly", "api", "serve"]
+
+
 
 $docker run [image_name] [startup command]  - to fetch the docker image from docker hub to docker cache
 
@@ -25,7 +30,7 @@ $docker logs [container ID]  -  to see what is happening inside container
 
 $docker diff [container_name]     -    to see the changes made in container
 
-$docker exec -i -t [container id] [command]  -   to run command inside container (ex.command=/bin/bash)
+$docker exec -i -t [container id] [command]  -   to run command inside container (ex.command=/bin/bash)(--rm=deleting the container after it exits)
 
 $docker_file = contains all the information for running your software in a base container
 
