@@ -1,0 +1,21 @@
+
+************ FORMATING & MOUNTING ************
+
+
+#Act of mounting a storage volume is essentially attaching it to a folder on the file system
+#/etc/fstab, its going mount everything that included in file line by line when booting. so, if you have a hard disk and you wanted to mounted automatically when booting, add it here.
+
+$lsblk  or  $sudo fdisk -l     -     gives you a list of block devices that are connected to linux workstation or server
+$mount     -      list all mounted storage devices on system
+$sudo umount [MOUNTPOINT]      -     to unmount the device from mountpoint 
+$sudo fdisk /dev/sdb       -        run that against the device that we want to create a file system on (to make partional table(GPT,MBR) and partionas on that device)
+$sudo mkfs.exfat -n "label" /dev/sdb       -       allow us to format the partition with whatever filesystem type we want(/dev/sdb = device) (exfat = filesystem)
+$df -h       -       shows you how much space is used up on any of the mounted file system
+$sudo mount /dev/sdb /mnt/disk2/      -     mount the /dev/sdb device to /mnt/disk2 floder 
+$mount /dev/cdrom /mnt      -        /dev/cdrom is the device that needs to be mounted. Usually, a mountable device is found inside the /dev folder. /mnt is the destination folder to mount the device to.
+                                     When I say mount, it means that we’ll connect the device to a folder so we can access the files from our filesystem. The default syntax to mount a filesystem is below:
+$sudo ncdu  [path_from _where_to_start]     -     to check disk uasge(it is a tool that is usefull when you are running out of space) (-x=to exclude attached file system)
+$du /home/user/Documents         -        to check how much space a file or a directory takes up (option=-smkh)                                                     
+
+
+                                    
