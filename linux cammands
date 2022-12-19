@@ -143,21 +143,24 @@ $who           -           displays a list of users who are currently logged int
 $w             -           provides a more detailed list about the users currently on the system than the who command
 $last         -            reads the entire login history from the /var/log/wtmp file and displays all logins and reboot records by default
 $groupadd  [nameOfGroup]           -           to create a new group ( information about groups is in /etc/group)
-$groupmod -n clerks sales             -         change groupname clerks to sales   ( change the GID for the group with the -g option )
-$find / -nogroup       -          To search for all files that are owned by just a GID (not associated with a group name) . These files with no group name are called orphaned files .
 $groupdel  [GroupName]         -          deleting the group  ,  As long as the group to be deleted is not a user's primary group
+$gpasswd -d [username] [groupname]       -     removing the user from the group
+$groupmod -n clerks sales             -         change groupname clerks to sales   ( change the GID for the group with the -g option )
+$groups      -      If you are only interested in knowing what groups you belong to
+$newgrp [group_name]      -       to change your current primary group.
+$chgrp [group_name] [file_name]     -      used to change the group owner of any file to any group.the chgrp command can only be used to change the group owner of a file to a group that the user is already a member of
+$useradd [username] -d /home/JD      -        create a new user with the home directory as /home/JD
+$usermod -a -G [group_name] [user_name]     -    to add groups to the user(is used to modify existing users)
+$usermod  [options] [argummments] [username]        -        command offers many options for modifying an existing user account.( ex. usermod -aG development jane )
+$userdel  [username]     -   To delete the user jane without deleting the user's home directory /home/jane   ( use   ' -r '  to delete home directory ) 
+$useradd -u 1009 -g users -G sales,research -m -c 'Jane Doe' jane     -     creates a user with a UID of 1009, a primary group of users, supplementary memberships in the sales and research groups, a comment of "Jane Doe", and an account name of jane.
+$passwd   [username]         -        to change user's password
+$chage [options] [username]         -       provides many options for managing the password aging information found in the /etc/shadow file.
+$find / -nogroup       -          To search for all files that are owned by just a GID (not associated with a group name) . These files with no group name are called orphaned files .
 $grep -Ev '^#|^$' /etc/login.defs      -      The /etc/login.defs file also contains values that are applied by default to new users you create with the useradd command. This file contains many comments and blank
                                                                      lines, so to only view lines that are not comments or blank lines (the real configuration settings), then you can use the following grep command:
 $useradd -D         -         The -D option to the useradd command allows you to view or change some of the default values used by the useradd command
 (  /etc/default/useradd   file contains all the default value of new user when creating new user with useradd command  )
-$useradd -u 1009 -g users -G sales,research -m -c 'Jane Doe' jane     -     creates a user with a UID of 1009, a primary group of users, supplementary memberships in the sales and research groups, a comment of "Jane Doe", and an account name of jane.
-$passwd   [username]         -        to change user's password
-$chage [options] [username]         -       provides many options for managing the password aging information found in the /etc/shadow file.
-$usermod  [options] [argummments] [username]        -        command offers many options for modifying an existing user account.( ex. usermod -aG development jane )
-$userdel  [username]     -   To delete the user jane without deleting the user's home directory /home/jane   ( use   ' -r '  to delete home directory ) 
-$groups      -      If you are only interested in knowing what groups you belong to
-$newgrp [group_name]      -       to change your current primary group.
-$chgrp [group_name] [file_name]     -      used to change the group owner of any file to any group.the chgrp command can only be used to change the group owner of a file to a group that the user is already a member of
 $stat [file_name]    -    displays more detailed information about a file, including providing the group ownership both by group name and GID number:
 $chown jane : people  [file_name]     -     For example, if the root user wanted to change the user ownership of the abc.txt file to the user jane, and group owner to people .
 $umask     -    used to determine default permissions that are set when a file or directory is created. Default permissions are determined when the umask value is subtracted from the maximum allowable default permissions
@@ -171,8 +174,6 @@ $ldd [program_path]     -     to list out all the dependancy of that program
 $service [script_name] [start/stop/status]    -    used for starting and stopping different services within the operating system
 $sudo systemctl enable docker  -  To ensure that the Docker daemon starts after each system reboot
 $dd if=/dev/sdb of=/dev/sda      -       to back up the entire hard drive as is to another drive.(if=input file , of=output file)
-$useradd [username] -d /home/JD      -        create a new user with the home directory as /home/JD
-$usermod -a -G [group_name] [user_name]     -    to add groups to the user(is used to modify existing users)
 $id [username]    -    to see the userID and groupID for user
 $cmp [file_name1] [file_name2]    -    to compare the two files byte by byte and helps you to find out whether the two files are identical or not
 $lsof      -     (list open files) command returns the user processes that are actively using a file system.
