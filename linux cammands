@@ -29,6 +29,7 @@ $passwd         -       change the login password
 4ifconfig         -        configre networks
 $ps        -       only shows the current processes running in the current shell
 $ps aux    -      to list all the processes with PID
+$pidof     -      
 $chmod   u=rwx,g=rwx,o=rwx   [file_name]     -    change permision of file
 $chmod   777  [file_name]      -     change permision of file ( where  first 7 mean owner get all permisions ,second for group , third for other )
                                                               ( read = 4 , write = 2 , execute = 1  -  all permision  means 4+2+1=7 )
@@ -174,6 +175,10 @@ $useradd [username] -d /home/JD      -        create a new user with the home di
 $usermod -a -G [group_name] [user_name]     -    to add groups to the user(is used to modify existing users)
 $id [username]    -    to see the userID and groupID for user
 $cmp [file_name1] [file_name2]    -    to compare the two files byte by byte and helps you to find out whether the two files are identical or not
+$lsof      -     (list open files) command returns the user processes that are actively using a file system.
+$lsof -u [username]     -     display the list of all opened files of user
+$lsof -i TCP:[port_number]     -       list all the running processes of [port_number]
+$kill -9 `lsof -t -u [username]`     -       kill all the processes of the use     
 
 
 
@@ -191,10 +196,11 @@ $ssh   pal@ubuntuPAL     -      command allows you to connect to another machine
 $ssh localhost          -        used to generated data in the .log file
 $service network restart           -          which takes down ALL interfaces, re-reads all related configuration files, and then restarts the networking for the system.
 $host  google.com           -          provide the IP adress of google.com
-$ip [OPTIONS] OBJECT COMMAND         -           show the type of interface, protocols, hardware and IP addresses, network masks and various other information about each of the active interfaces on the system
-$route             -            To view a table that describes where network packages are sent
-$netstat             -           provides a large amount of network information. It can be used to display information about network connections as well as display the routing table similar to the route command.
-$ss            -           to view what connections are currently established between their local machine and remote machines, statistics about those connections, etc.
+$ip [OPTIONS] OBJECT COMMAND      -      show the type of interface, protocols, hardware and IP addresses, network masks and various other information about each of the active interfaces on the system
+$route      -       To view a table that describes where network packages are sent
+$netstat       -     provides a large amount of network information. It can be used to display information about network connections as well as display the routing table similar to the route command.
+$ss [options]      -     to view what connections are currently established between their local machine and remote machines, statistics about those connections, etc (-l=listen, -t=tcp, -u=udp, -p=process, -s=statistics ,-4=IP4)
+$ss dst/src [IPaddress]     -    List Connections to a destination/source IP Address
 $ping localhost > /dev/null  &       -     use  '&'  to start the process in background , otherwise process will run in forground and you dont able to type in Terminal   
 $ sudo ifconfig [interface_name] down       -      to up|down interface 
 
