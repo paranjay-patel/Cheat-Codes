@@ -67,7 +67,9 @@ $docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage    -
 
 $docker push [new-repo:tagname]    -   to push the image to dockerHub
 
-$docker-compose  -f  [filename.yaml]  up   -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)
+$docker-compose  -f  [filename.yaml]  up  [options] -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)(-d=detached mode)
+
+$docker-compose build    -      run dokcer-compose.yaml file and create images specified in yaml, if it is in same folder(--no-cache=not use cache when rebuild)
 
 $docker compose logs -f      -      to view logs of services
 
