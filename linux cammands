@@ -175,12 +175,12 @@ $service [script_name] [start/stop/status]    -    used for starting and stoppin
 $sudo systemctl enable docker  -  To ensure that the Docker daemon starts after each system reboot
 $dd if=/dev/sdb of=/dev/sda      -       to back up the entire hard drive as is to another drive.(if=input file , of=output file)
 $id [username]    -    to see the userID and groupID for user
-$cmp [file_name1] [file_name2]    -    to compare the two files byte by byte and helps you to find out whether the two files are identical or not
+$cmp [file_name1] [file_name2]     -    to compare the two files byte by byte and helps you to find out whether the two files are identical or not
 $lsof      -     (list open files) command returns the user processes that are actively using a file system.
-$lsof -u [username]     -     display the list of all opened files of user
-$lsof -i TCP:[port_number]     -       list all the running processes of [port_number]
-$kill -9 `lsof -t -u [username]`     -       kill all the processes of the use     
-
+$lsof -u [username]       -     display the list of all opened files of user
+$lsof -i TCP:[port_number]     -     list all the running processes of [port_number]
+$kill -9 `lsof -t -u [username]`      -      kill all the processes of the use     
+$[comand1] | pv | [command2]     -     to monitor the progress of a an ongoing operation ( pv -p /etc/hosts | wc)
 
 
 
