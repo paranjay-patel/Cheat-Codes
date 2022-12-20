@@ -1,4 +1,6 @@
 # .gitignore to ignore file specified in .gitignore to get into th staging phase. 
+# "git revert" does not delete any data in process instead, git creates a new commit with the included files reverted to thier previous state. so your
+version control history moves forward while the state of file moves backw ard
 
 
 $git config --global user.name "pal"    -     to set a user name for git
@@ -6,7 +8,9 @@ $git config --global user.email "email"     -     to set a email for git
 $git config --list    -    to see the username and useremail
 $git init    -    Initialized empty Git repository
 $git status   -   show the status of the local repository(master repository)
-$git add .     -     transfer all the file in current folder from working directory(Workspace) to staging area
+$git add .     -     transfer all the file in current folder from working directory(Workspace) to staging area (replace "." with file name if needed)
+$git reset .    -      transfer all the file in current folder from staging area to workspace
+$git reset --hard     -     remove from both workspace and staging area
 $git-clean      -     Remove untracked files from the working tree Synopsis
 $git commit -m "commit msg"    -    to commit the changes stored in staging area
 $git log    -    shows informtion about all the commits
@@ -28,3 +32,10 @@ $git stash    -    to stash an item(stash means sending item from workspace to s
 $git stash list    -    to see the stash item list {0}{1}{2}..
 $git stash apply stash@(0)     -     to apply stash item. get item back from stash to workspace
 $git stash clear    -     to clear the stash item
+$git revert     -     help you undo an exciting commit
+$git clean -n/-f    -    remove untracked files( -f=forcefully  )
+$git tag -a [tag_name] -m [message] [commitID]    -    tag allows giving meaningful names to a soecific commit (easy to find commit)
+$git tag    -    to see the list of tags
+$git show [tag_name]    -    to see perticular commit content by using tag
+$git tag -d [tag_name]     -     to delete tag
+
