@@ -1,10 +1,30 @@
+# .gitignore to ignore file specified in .gitignore to get into th staging phase. 
+
+
 $git config --global user.name "pal"    -     to set a user name for git
 $git config --global user.email "email"     -     to set a email for git 
 $git config --list    -    to see the username and useremail
 $git init    -    Initialized empty Git repository
 $git status   -   show the status of the local repository(master repository)
 $git add .     -     transfer all the file in current folder from working directory(Workspace) to staging area
+$git-clean      -     Remove untracked files from the working tree Synopsis
 $git commit -m "commit msg"    -    to commit the changes stored in staging area
+$git log    -    shows informtion about all the commits
+$git log --oneline   -    list all commits in one line
+$git log --grep "ignore"    -    to find "ignore" string in logs   
 $git show [commitID]    -     show what changes you made in that commit
 $git remote add origin [git_repo_url]     -    to add a remote repo
-
+$git remote set-url origin [git_repo_url]      -     to change the remote repo
+$git config --global credential.helper cache     -    to cache the given record in your computer to remembers the token(run this after login when push)
+$git config --global --unset credential.helper     -     If needed, anytime you can delete the cache record by
+$git config --system --unset credential.helper  
+$git push -u origin master      -      push the master branch on local machine to origin on remote branch
+$git pull origin master     -     to pull from origin(remote) to master(local) (use --rebase when error)
+$git branch     -     to check in which branch we are now 
+$git branch [name]     -    to create a new branch from current branch
+$git checkout [branch_name]     -    to change the branch
+$git merge [branch_name]     -     merge [branch_name] with current branch
+$git stash    -    to stash an item(stash means sending item from workspace to stash_storage, so workspace become empty and we can complete other important work first )
+$git stash list    -    to see the stash item list {0}{1}{2}..
+$git stash apply stash@(0)     -     to apply stash item. get item back from stash to workspace
+$git stash clear    -     to clear the stash item
