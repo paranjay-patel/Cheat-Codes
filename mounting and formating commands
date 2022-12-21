@@ -17,5 +17,5 @@ $mount /dev/cdrom /mnt      -        /dev/cdrom is the device that needs to be m
 $sudo ncdu  [path_from _where_to_start]     -     to check disk uasge(it is a tool that is usefull when you are running out of space) (-x=to exclude attached file system)
 $du /home/user/Documents         -        to check how much space a file or a directory takes up (option=-smkh)                                                     
 
-
+$eject /dev/cdrom     -     to eject removable media such as DVD/CD ROM or floppy disk from the system
                                     
