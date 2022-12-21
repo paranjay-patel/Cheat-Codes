@@ -27,6 +27,7 @@ $git pull origin master     -     to pull from origin(remote) to master(local) (
 $git branch     -     to check in which branch we are now 
 $git branch [name]     -    to create a new branch from current branch
 $git checkout [branch_name]     -    to change the branch
+$git checkout -b [branch_name]      -     to create and switch to a branch at the same time
 $git merge [branch_name]     -     merge [branch_name] with current branch
 $git stash    -    to stash an item(stash means sending item from workspace to stash_storage, so workspace become empty and we can complete other important work first )
 $git stash list    -    to see the stash item list {0}{1}{2}..
