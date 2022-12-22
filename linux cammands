@@ -181,7 +181,7 @@ $lsof -u [username]       -     display the list of all opened files of user
 $lsof -i TCP:[port_number]     -     list all the running processes of [port_number]
 $kill -9 `lsof -t -u [username]`      -      kill all the processes of the use     
 $[comand1] | pv | [command2]     -     to monitor the progress of a an ongoing operation ( pv -p /etc/hosts | wc)
-
+$visudo      -      this will open the directory. add "[username] ALL=(ALL) NOPASSWD:ALL" below root.this will give [username] all the privileges
 
 
 
