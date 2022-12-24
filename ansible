@@ -1,4 +1,0 @@
-#Adhoc command - used to run only smaller task
-ansible [hosts] -m [module_name]     -    run the module_name on hosts
-ansible -i hosts all -m ping     -     send ping to all hosts in hosts list (/etc/ansible/hosts)
-                                       -i = points to hosts file  ,  all = all hosts in hosts_file , -m = define module
