@@ -1,0 +1,82 @@
+#ansible use ssh for communuication to between master and worker node.
+#we can directly ssh to another machine with "ssh privateIP_of_node" 
+
+step1=we have to add node's private_IP in /etc/ansible/hosts
+step2=we have to uncomment "inventory=/etc/ansible/hosts"  in /etc/ansibel/ansible_config 
+then $ssh [private_ip]   -   id permision denined then go to step3
+step3=edit /etc/ssh/sshd_config file, uncomment "PermitRootLogin Yes" and "PasswordAuthentication Yes" and comment "PasswordAuthentication No"
+step4=service sshd restart (to restart the changes)
+step5=$ssh [private_ip] (remote machine should have same username as it local machine)   
+
+#everytime we want to remote machine we have to give a password for authentication, instead of that we can make use of public and private keys
+step1=$ssh-keygen (this will make .ssh directory in current folder.inside that there is a private and public key)
+step2=$ssh-copy-id ansible@[remotehost_private_IP] (copy public key of localhost to remotehost for passwordless authentication)
+
+$ansible all --list-hosts     -     list all the node connected to ansible serever
+$ansible [group_name] --list-hosts    -    list all the node in a [group_name] connected to ansible serever
+$ansible [group_name][1] --list-hosts    -    list specific the node in a [group_name] connected to ansible serever
+
+#there is three way you can use to send code to remote node 
+1)ad-hoc  -  not follow the idempoteancy(same task can execute more than once). used for a small task that needs to be complete fast
+2)modules   -  predefined set of commands(collection of configuration filess)(modules stored in /etc/ansible/hosts)
+3)playbooks   -   is a file where you write code consist of vars, tasks, handlers, templates and roles
+                  playbooks is collection of modules.
+                  diveded into 3 sections
+                  1)target secttion   -    define the hosts against the playbook task can be executed
+                  2)variable section   -   define variable
+                  3)task section   -   list of all the node that we need to run in order
+                  4)handler section   -   exactly like a task but it will run when call by another task. 
+                                          it only run if a task contain "notifier" and also include that it change something
+#ad-hoc commands
+$ansible [group_name][1:3]/all  -a "[command]"    -   execute [command] on all the host in [group_name](-a=arguments,-b=run as sudo)
+
+#modules command
+$ansible  [group_name][1:3]/all -b -m [module_name] -a "[commands]"  - (-m=module)
+ex.ansible demo -b -m yum -a "pkg=httpd state=present/absent/started/stopped/latest"   -   run yum as a root and install httpd
+ex.ansible demo -b -m user -a "name=pal"   -   create a user pal
+ex.ansible demo -b -m copy -a "src=file dest=/temp"   - copy file from localhost to /temp folder of all the node in demo group
+
+$ansible [group_name] -m setup    -    show the information about all the nodes in [group_name]
+$ansible [group_name] -m setup -a "filer=*ipv4*"  -   to get the ipv4 of all the nodes
+
+#playbook command
+$ansible-playbook [yaml_file]   -   to run the playbook 
+$ansible-playbook [yaml_file] --check    -    (dry run)to check wheather the playbook is formatted currectly or not
+
+#Ansible will notify handler only when task is in changed state – this is on purpose to prevent unnecessary handlers execution (e.g. service restarts) on subsequent playbook runs.
+
+
+#target.yaml file
+--- #my first testing 
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    pkgname: httpd
+  tasks:
+    - name: install pip
+      action: yum name=pip state=absent
+    - name: install httpd on cestos
+      action: yum name='{{pkgname}}' state=present
+      notify: restart httpd  
+  handlers:
+    - name: restart httpd
+      action: service name='{{pkgname}}' state=restarted
+
+#loops in playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: add list of users im my nodes
+      user: name='{{item}}' state=present
+      loop:
+        - palll
+        - prrranav
+        - jash
+        - jainikc
+          
+#we can also use "with_items:" instead of "loop:"
+#name='{{item}}' should be remain same
