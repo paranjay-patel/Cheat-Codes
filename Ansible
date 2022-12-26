@@ -45,9 +45,45 @@ $ansible-playbook [yaml_file] --check    -    (dry run)to check wheather the pla
 
 #Ansible will notify handler only when task is in changed state – this is on purpose to prevent unnecessary handlers execution (e.g. service restarts) on subsequent playbook runs.
 
+#Vault 
+#vault allow keeping sensitive data such as password or key in encrypted files rather than having it in plain-text. It makes playbook encrypted in short.
+$ansible-vault create [file.yaml]    -   create a new encrypted playbook
+$ansible-vault edit vault [file.yaml]   -   edit the encryted playbook
+$ansible-vault rekey [file.yaml]   -   to change the pssword 
+$ansible-vault encrypt [file.yaml]    -    to encrypt an existing playbook
+$ansible-vault decrypt [file.yaml]    -    to decrypt an existinf playbook
 
-#target.yaml file
---- #my first testing 
+#Roles
+#we can use two techniques for running a set of tasks 1)includes 2)roles
+#roles are good for oraganising tasks and rncapsulating data needed to accomplish those task 
+#anisble roles: 1)default 2)files 3)handlers 4)meta 5)tmplate 6)tasks 7)vars
+#we can organise playbooks in a directory structure called roles
+#adding more and more functinality to the playbooks will make it diffcult to maintain in single file 
+
+#we have to makd directory in this order
+
+├── master.yaml                #master file for every roles in roles directory
+└── roles
+    └── webserver              #everything related to webserver defined in this directory
+        ├── tasks
+        │   └── main.yaml      #tasks related to webserver
+        └── vars
+            └── main.yaml      #tasks related to vars
+
+EX4
+****
+--- #master playbook for webserver                                 --- #main.yaml
+- hosts: demo                                                      - name: install apache on redhat
+  user: ansible                                                      yum: pkg=httpd state=latest
+  become: yes
+  connection: ssh
+  roles:
+    - webserver
+
+
+EX1
+****
+---  #target.yaml file
 - hosts: demo
   user: ansible
   become: yes
@@ -64,7 +100,10 @@ $ansible-playbook [yaml_file] --check    -    (dry run)to check wheather the pla
     - name: restart httpd
       action: service name='{{pkgname}}' state=restarted
 
-#loops in playbook
+
+EX2
+****
+---  #loops in playbook
 - hosts: demo
   user: ansible
   become: yes
@@ -77,6 +116,23 @@ $ansible-playbook [yaml_file] --check    -    (dry run)to check wheather the pla
         - prrranav
         - jash
         - jainikc
-          
+     
 #we can also use "with_items:" instead of "loop:"
 #name='{{item}}' should be remain same
+
+
+EX3
+****
+---
+#condition playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install apache server for debian family
+      command: apt-get -y install apache2
+      when: ansible_os_family == "Debian"
+    - name: install apache server for redhat family
+      command: yum -y install httpd
+      when: ansible_os_family == "RedHat"
