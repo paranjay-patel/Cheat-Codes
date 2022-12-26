@@ -39,7 +39,8 @@ $cp   -v   /home/pal/Documents/New   ./New1     -     show the conformation mess
 sudo find / -type f -name [file_name or pattern]     -     find the given file ( replace 'f' with 'd' if you want to find directory ,                                         
                                                                                  replace -name with -iname if no case sensitive , 
                                                                                  replace '/' with from where to start finding Ex. ~ , . 
-$mkdir  [directory_name]       -      create directory
+$mkdir  [directory_name]       -      reate directory
+$mkdir -p  ansible/roles/webserver/tasks    -    to make parent directory ansible, inside it roles, inside it webserver, inside it tasks
 $rm -r  [directory_name]       -      remove directory
 $rmdir  [directory_name]       -      remove   empty  directory
 $gzip  [file_name]       -      to compress files (uses the Lempel-Ziv data compression algorithm)
