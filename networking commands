@@ -54,3 +54,6 @@ $nc -v -n 192.168.56.110 22     -     to know what type of service is running be
 $tar -zcf - [file/folder] | pv | nc -l -p 5555    -    run on machine A (Transfer Files Between Two Linux Machines)
 $nc 192.168.1.4 5555 | pv | tar -zxf -        -         run on machine B (Transfer Files Between Two Linux Machines)
 
+---nmap---
+
+
