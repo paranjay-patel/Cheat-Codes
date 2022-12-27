@@ -55,5 +55,9 @@ $tar -zcf - [file/folder] | pv | nc -l -p 5555    -    run on machine A (Transfe
 $nc 192.168.1.4 5555 | pv | tar -zxf -        -         run on machine B (Transfer Files Between Two Linux Machines)
 
 ---nmap---
-
+$nmap -sP 192.168.1.159/24    -    to scan whether the host is up or down (systema alive or not)(-s=scan)
+$nmap -sT -p 80,443 192.168.1.159/24    -   scan for port 80 and 443 on all system in network(-T=tcp)
+$nmap -sS -p 80,443 192.168.1.159/24    -   stealthy scan for ports(do not complete the tcp- 3 way handshake)
+$sudo nmap -O 192.168.1.159/29     -    to check the os of host
+$sudo nmap -sS -D 10.7.1.80  10.7.1.226    -    send a packet to 10.7.1.226 as 10.7.1.80 and also froom your ip
 
