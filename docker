@@ -103,6 +103,7 @@ $docker image history [Image_name]     -    to see the command that was used to 
 
 
 
+
 ********** NETWORK ************
 
 $docker network create [network_name]      -      to create docker network  
@@ -139,6 +140,13 @@ $docker volume prune [volumn_name]       -       to remove all unused volumes
 
 $docker volume/container  inspect [name]       -       to get the information about them    
 
+$docker inspect [name]       -       to get the information about contaier/volume/image    
+
+
+#volumes:         
+  my_ubuntu_data2:    (name of the volume of second container)
+    external: true
+    name: test1_my_nginx_data   (names of the volume that you want to share)
 
 
 
