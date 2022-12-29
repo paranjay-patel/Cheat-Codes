@@ -63,13 +63,15 @@ $docker commit [container_id] [new_image:TAG]    -  to tag the container ( repos
 
 $docker tag [local-image:tagname] [new-repo:tagname]  -   to change the local image name to push it to remote repository(new-repo = username/imagename)
 
-$docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage    -    
+$docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage    -    to change the local image name to push it to remote repository(new-repo = username/imagename)
 
 $docker push [new-repo:tagname]    -   to push the image to dockerHub
 
-$docker-compose  -f  [filename.yaml]  up  [options] -   to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)(-d=detached mode)
+$docker-compose  -f  [filename.yaml]  up  [options]     -    to run commands in yaml file which create the containers specified in file, in same network (replace "up" with "down" to remove container)(-d=detached mode)
 
-$docker-compose build    -      run dokcer-compose.yaml file and create images specified in yaml, if it is in same folder(--no-cache=not use cache when rebuild)
+$docker-compose up      -      if docker-compose.yaml file is in same directory
+
+$docker-compose build      -      run dokcer-compose.yaml file and create images specified in yaml, if it is in same folder(--no-cache=not use cache when rebuild)
 
 $docker compose logs -f      -      to view logs of services
 
